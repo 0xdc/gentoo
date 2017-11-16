@@ -17,7 +17,7 @@ KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="doc"
 
 RDEPEND="
-	!dev-python/mysql-python
+	!dev-python/mysql-python[!python_targets_python2_7?,!python_targets_pypy?]
 	virtual/mysql"
 DEPEND="${RDEPEND}
 	dev-python/setuptools[${PYTHON_USEDEP}]
