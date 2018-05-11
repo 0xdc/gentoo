@@ -41,8 +41,6 @@ python_install_all() {
 
 	keepdir /var/log/holland
 
-	keepdir /etc/holland
-	keepdir /etc/holland/backupsets
 	keepdir /etc/holland/providers
 
 	insinto /etc/holland
