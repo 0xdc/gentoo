@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 #
 # @ECLASS: mozconfig-v6.45.eclass
@@ -74,7 +74,7 @@ inherit flag-o-matic toolchain-funcs mozcoreconf-v4
 # Set the variable to any value if the use flag should exist but not be default-enabled.
 
 # use-flags common among all mozilla ebuilds
-IUSE="${IUSE} dbus debug ffmpeg +gstreamer +jemalloc3 neon pulseaudio selinux startup-notification system-cairo
+IUSE="${IUSE} cpu_flags_arm_neon dbus debug ffmpeg +gstreamer +jemalloc3 pulseaudio selinux startup-notification system-cairo
 	system-harfbuzz system-icu system-jpeg system-libevent system-sqlite system-libvpx"
 
 # some notes on deps:
@@ -352,7 +352,7 @@ mozconfig_config() {
 	mozconfig_use_with system-harfbuzz system-graphite2
 
 	# Modifications to better support ARM, bug 553364
-	if use neon ; then
+	if use cpu_flags_arm_neon ; then
 		mozconfig_annotate '' --with-fpu=neon
 		mozconfig_annotate '' --with-thumb=yes
 		mozconfig_annotate '' --with-thumb-interwork=no
