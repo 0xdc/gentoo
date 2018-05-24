@@ -34,5 +34,5 @@ python_install_all() {
 	keepdir /etc/holland/providers
 
 	insinto /etc/holland/providers
-	doins "${S}"/../../config/providers/${PN##*-}.conf
+	doins "${WORKDIR}/${MY_P}/config/providers/${PN##*-}.conf"
 }
