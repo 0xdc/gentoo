@@ -33,7 +33,6 @@ python_compile_all() {
 }
 
 python_install_all() {
-	use doc && local DOCS=( README config/README config/providers/README docs/man/README docs/man/holland.rst )
 	use doc && local HTML_DOCS=( docs/build/html/. )
 
 	distutils-r1_python_install_all
