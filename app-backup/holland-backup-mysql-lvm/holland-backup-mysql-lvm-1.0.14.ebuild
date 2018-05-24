@@ -24,8 +24,7 @@ RDEPEND="
 "
 PDEPEND="
 	~app-backup/holland-${PV}[${PYTHON_USEDEP}]
-	~app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP}]
-	~app-backup/holland-backup-mysql-meta-${PV}[mysqldump]
+	~app-backup/holland-backup-mysql-meta-${PV}[${PYTHON_USEDEP},mysqldump]
 "
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
