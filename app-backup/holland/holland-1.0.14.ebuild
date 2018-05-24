@@ -9,7 +9,6 @@ inherit distutils-r1
 DESCRIPTION="Holland Core Plugins"
 HOMEPAGE="http://www.hollandbackup.org/"
 SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${P}.tar.gz"
-
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
