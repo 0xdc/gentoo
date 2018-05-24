@@ -17,13 +17,13 @@ IUSE="doc"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
+	~app-backup/holland-${PV}[${PYTHON_USEDEP}]
 	~app-backup/holland-lib-common-${PV}[${PYTHON_USEDEP}]
 	|| (
 		dev-python/mysql-python[${PYTHON_USEDEP}]
 		dev-python/mysqlclient[${PYTHON_USEDEP}]
 	)
 "
-PDEPEND="~app-backup/holland-${PV}[${PYTHON_USEDEP}]"
 
 S="${WORKDIR}/${MY_P}/plugins/${PN//-/.}"
 

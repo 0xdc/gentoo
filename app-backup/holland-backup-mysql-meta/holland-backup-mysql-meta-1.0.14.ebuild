@@ -18,8 +18,8 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
 	${PYTHON_DEPS}
+	=app-backup/holland-${PV}[${PYTHON_USEDEP}]
 	lvm? ( ~app-backup/holland-backup-mysql-lvm-${PV}[${PYTHON_USEDEP}] )
 	mysqldump? ( ~app-backup/holland-backup-mysqldump-${PV}[${PYTHON_USEDEP}] )
 	mysqlhotcopy? ( ~app-backup/holland-backup-mysqlhotcopy-${PV}[${PYTHON_USEDEP}] )
 "
-PDEPEND="=app-backup/holland-${PV}[${PYTHON_USEDEP}]"
