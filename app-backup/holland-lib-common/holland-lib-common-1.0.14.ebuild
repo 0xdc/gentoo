@@ -8,7 +8,7 @@ inherit distutils-r1
 
 DESCRIPTION="Holland Core Library"
 HOMEPAGE="http://www.hollandbackup.org/"
-MY_P="${P%%-*}-${P##*-}"
+MY_P="holland-${PV}"
 SRC_URI="http://hollandbackup.org/releases/stable/${PV%.*}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
