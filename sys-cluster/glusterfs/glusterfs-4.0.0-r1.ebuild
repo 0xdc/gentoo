@@ -20,7 +20,7 @@ HOMEPAGE="https://www.gluster.org/"
 
 LICENSE="|| ( GPL-2 LGPL-3+ )"
 SLOT="0"
-IUSE="bd-xlator crypt-xlator debug emacs +fuse +georeplication glupy infiniband ipv6 +libtirpc qemu-block rsyslog static-libs +syslog systemtap test +tiering vim-syntax +xml"
+IUSE="bd-xlator crypt-xlator debug emacs +fuse +georeplication glupy infiniband ipv6 +libtirpc qemu-block rsyslog static-libs +syslog systemd systemtap test +tiering vim-syntax +xml"
 
 REQUIRED_USE="georeplication? ( ${PYTHON_REQUIRED_USE} )
 	glupy? ( ${PYTHON_REQUIRED_USE} )
@@ -174,6 +174,10 @@ src_install() {
 		# and set a symlink to be compliant with all other distros
 		mv "${ED}"/usr/{share/glusterfs/scripts/gsync-sync-gfid,libexec/glusterfs/} || die
 		dosym ../../../libexec/glusterfs/gsync-sync-gfid /usr/share/glusterfs/scripts/gsync-sync-gfid
+	fi
+
+	if use systemd; then
+		systemd_dounit "${S}"/extras/systemd/*.service
 	fi
 
 	newinitd "${FILESDIR}/${PN}-r1.initd" glusterfsd
